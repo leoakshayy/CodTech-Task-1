@@ -1,0 +1,44 @@
+def calculator():
+    print("Welcome to the Basic Calculator!\n")
+
+    # Get input from the user
+    try:
+        num1 = float(input("Enter the first number (e.g., 5, 2.3): "))
+        num2 = float(input("Enter the second number (e.g., 3, 4.5): "))
+    except ValueError:
+        print("Invalid input. Please enter numeric values.")
+        return
+
+    # Display operation options
+    print("\nChoose an operation by entering the corresponding number:")
+    print("1. Addition (+) - Add the two numbers")
+    print("2. Subtraction (-) - Subtract the second number from the first")
+    print("3. Multiplication (*) - Multiply the two numbers")
+    print("4. Division (/) - Divide the first number by the second")
+
+    # Get the operation choice
+    operation = input("\nEnter your choice (1, 2, 3, or 4): ")
+
+    # Perform the selected operation
+    if operation == "1":
+        result = num1 + num2
+        print(f"\nYou chose Addition. The result is: {result}")
+    elif operation == "2":
+        result = num1 - num2
+        print(f"\nYou chose Subtraction. The result is: {result}")
+    elif operation == "3":
+        result = num1 * num2
+        print(f"\nYou chose Multiplication. The result is: {result}")
+    elif operation == "4":
+        if num2 == 0:
+            print("\nError: Division by zero is not allowed.")
+        else:
+            result = num1 / num2
+            print(f"\nYou chose Division. The result is: {result}")
+    else:
+        print("\nInvalid operation choice. Please select a valid option.")
+
+if __name__ == "__main__":
+    calculator()
+
+
